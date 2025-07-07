@@ -21,7 +21,7 @@
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-            transition: background 0.3s ease;
+            transition:0.3s ease;
         }
 
         #header {
@@ -110,32 +110,33 @@
 
         .course-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows: repeat(2,1fr);
             gap: 1.5rem;
         }
 
         .box {
-            background: linear-gradient(to bottom right, #37474f, #263238);
+            background: linear-gradient(to bottom right, #0d4f70, #215d7b,rgb(1, 33, 50));
             border-radius: 20px;
             padding: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 320px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease,0.3s ease;
             cursor: pointer;
             animation: zoomIn 0.5s ease;
         }
 
         .box:hover {
             transform: scale(1.05);
-            background: linear-gradient(to bottom right, #455a64, #37474f);
+            background: linear-gradient(to bottom right, #569cbc, #5c7f91);
         }
 
         .box h1 {
             font-size: 1.2rem;
             margin-bottom: 0.3rem;
-            color: #90caf9;
+            color: #f1f1f1;
         }
 
         .box h2 {
@@ -153,7 +154,7 @@
             font-size: 0.85rem;
             color: #b0bec5;
         }
-
+       
         .box a {
             text-decoration: none;
             color: #64b5f6;
@@ -172,6 +173,7 @@
             justify-content: space-around;
             animation: fadeIn 1s ease-in;
         }
+       
 
         .end {
             background-color: #263238;
@@ -182,12 +184,13 @@
             text-align: center;
             flex: 1;
             min-width: 180px;
-            transition: background 0.3s, transform 0.3s;
+            transition: 0.3s, transform 0.3s;
         }
 
         .end:hover {
             background-color: #37474f;
             transform: translateY(-4px);
+            background-color:blueviolet;
         }
 
         @keyframes fadeInDown {
@@ -209,7 +212,7 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
-        }
+        } 
     </style>
 </head>
 
@@ -239,49 +242,19 @@
     </div>
 
     <section id="main">
+        <h2 style="font-size: 2rem; color: #90caf9; text-align: center; margin-bottom: 1rem;">📚Courses</h2>
         <div class="course-grid">
-            <div class="box">
-                <h1>Placement with DSA</h1>
-                <div class="mid">Placement Taiyaari with DSA</div>
-                <div class="bottom">Beginner to Advance<br>14k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>DSA to Development</h1>
-                <div class="mid">A Complete Guide</div>
-                <div class="bottom">Beginner to Advance<br>625k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>Java Backend</h1>
-                <div class="mid">Live Development Course</div>
-                <div class="bottom">Intermediate to Advance<br>325k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>Tech Interview 101</h1>
-                <div class="mid">From DSA to System Design</div>
-                <div class="bottom">Beginner to Advance<br>231k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>Full Stack</h1>
-                <div class="mid">React & Node.js Live</div>
-                <div class="bottom">Beginner to Advance<br>627k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>C++ Programming</h1>
-                <div class="mid">Online C++ Course</div>
-                <div class="bottom">Beginner to Advance<br>326k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>Placement Pro</h1>
-                <div class="mid">Mastering Soft Skills</div>
-                <div class="bottom">Beginner to Advance<br>26k+ interested<br><a href="#">Explore</a></div>
-            </div>
-            <div class="box">
-                <h1>Data Analysis</h1>
-                <div class="mid">Training Program</div>
-                <div class="bottom">Beginner to Advance<br>57k+ interested<br><a href="#">Explore</a></div>
-            </div>
+            <div class="box box1"><h1>Placement with DSA</h1><div class="mid">Placement Taiyaari with DSA</div><div class="bottom">Beginner to Advance<br>14k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box2"><h1>DSA to Development</h1><div class="mid">A Complete Guide</div><div class="bottom">Beginner to Advance<br>625k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box3"><h1>Java Backend</h1><div class="mid">Live Development Course</div><div class="bottom">Intermediate to Advance<br>325k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box4"><h1>Tech Interview 101</h1><div class="mid">From DSA to System Design</div><div class="bottom">Beginner to Advance<br>231k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box5"><h1>Full Stack</h1><div class="mid">React & Node.js Live</div><div class="bottom">Beginner to Advance<br>627k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box6"><h1>C++ Programming</h1><div class="mid">Online C++ Course</div><div class="bottom">Beginner to Advance<br>326k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box7"><h1>Placement Pro</h1><div class="mid">Mastering Soft Skills</div><div class="bottom">Beginner to Advance<br>26k+ interested<br><a href="#">Explore</a></div></div>
+            <div class="box box8"><h1>Data Analysis</h1><div class="mid">Training Program</div><div class="bottom">Beginner to Advance<br>57k+ interested<br><a href="#">Explore</a></div></div>
         </div>
 
+        <h2 style="font-size: 1.8rem; color: #ffa726; text-align: center; margin: 2rem 0 1rem;">✨ Must Explore</h2>
         <div class="end-buttons">
             <div class="end">Jobs for You</div>
             <div class="end">Hire with Us</div>
@@ -290,5 +263,4 @@
         </div>
     </section>
 </body>
-
 </html>
