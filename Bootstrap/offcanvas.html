@@ -1,77 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Offcanvas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<style>
-.body{
-    height: 300vh;
-    
-}
-</style>
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.css">
+  <script src="bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
 <body>
+  <div class="container-fluid bg-dark">
+    <div class="container ">
 
-  
-  <nav class="navbar navbar-dark bg-dark px-3 my-5">
-    <a class="navbar-brand" href="#">Bootstrap</a>
-    </p>
-    
-    <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-example">
-       Menu
-    </button>
-  </nav>
-<p>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quas, quos animi sequi temporibus officia corrupti quisquam, modi odit, mollitia aliquid vel esse earum beatae laudantium ratione molestiae et assumenda.
-</p>
-  
-  <div class="offcanvas offcanvas-end" data-bs-backdrop="scroll" id="offcanvas-example">
-    <div class="offcanvas-header bg-dark text-white">
-      <h5 class="offcanvas-title">Welcome!</h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body bg-secondary text-white">
-      <h2>Choose Subject</h2>
-      <div class="container">
-        <div class="dropdown dropleft" id="element1">
-            <button data-bs-toggle="dropdown" data-bs-parent="#element1"
-                class="dropdown-toggle dropdown-toggle-split btn btn-primary btn btn-lg "data-bs-toggle="dropdown">
-                course
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">AI</a></li>
-                <li><a class="dropdown-item" href="#">CS</a></li>
-                 <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#"></a></li>
-                <li><a class="dropdown-item" href="#">DS</a></li>
-                <li><a class="dropdown-item" href="#">SE</a></li>
-                <li><a class="dropdown-item" href="#">DE</a></li>
-                <li><a class="dropdown-item" href="#">OR</a></li>
+      <nav class="navbar navbar-expand-lg text-light d-flex ">
+
+        <h1 class="navbar-brand py=0 fw-bold text-light mb-0">Bootstrap
+          <img src="./bootstrap.png" height=50px width="50px">
+        </h1>
+
+        <button class="navbar-toggler bg-primary py=0 mb=0" data-bs-toggle="offcanvas"
+          data-bs-target="#OffCanvas-example">
+          <span class="navbar-toggler-icon btn-light"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end offcanvas-lg bg-dark" id="OffCanvas-example">
+
+          <div class="offcanvas-header d-flex align-items-end">
+            <button class="btn btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto fw-bold">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="">Menu</a>
+              </li>
+              <li class="nav-item">
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown">
+                  Service
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end bg-light">
+                  <li><a class="dropdown-item text-dark" href="#">Design</a></li>
+                  <li><a class="dropdown-item text-dark" href="#">Development</a></li>
+                  <li><a class="dropdown-item text-dark" href="#">About</a></li>
+                  <li><a class="dropdown-item text-dark" href="#">Help</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="">About</a>
+              </li>
             </ul>
+          </div>
         </div>
-    </div>
+      </nav>
     </div>
   </div>
-
-<fieldset>
-
-    <a href="#offcanvas-example1" data-bs-toggle="offcanvas"> offcanvas</a>
-
-    <div class="offcanvas offcanvas-top" data-bs-backdrop="static" id="offcanvas-example1">
-        <div class="offcanvas-header bg-dark">
-            <h1>Welcome !</h1>
-            <button class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-        </div>
-        <div class="offcanvas-body bg-secondary">
-            <h2>this is offcanvas body</h2>
-        </div>
-    </div></fieldset>
-
 </body>
-
 </html>
-
