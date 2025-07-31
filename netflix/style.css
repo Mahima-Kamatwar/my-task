@@ -11,9 +11,10 @@ body, html {
     url(./netflix.png);
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
-.dropdown-menu {
+/* .dropdown-menu {
 
   background-color: #000;
   border: 1px solid #333;
@@ -26,6 +27,35 @@ body, html {
 
 .dropdown-item:hover {
   background-color: #3f3e3e;
+} */
+ 
+ .language-dropdown {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: white;
+}
+
+.language-dropdown i {
+  margin-right: 8px;
+  font-size: 18px;
+  color: white;
+}
+.language-dropdown select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  appearance: none;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.language-dropdown select:focus {
+  outline: none;
 }
 .b{
     height: 70%;
@@ -61,3 +91,17 @@ margin-left: 20px;
       background-color: rgba(0, 0, 0, 0.6);
       border: 1px solid #aaa;
     }
+    .dro{
+        opacity: 0.7;
+        color: white;
+    }
+   .line{
+    background: linear-gradient(purple,red,purple);
+    padding: 1rem;
+    border: 1px;
+    margin-top:0%;
+    border-radius: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 1rem;
+   }
