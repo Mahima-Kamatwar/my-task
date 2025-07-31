@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.button {
+    height: 30px;
+    width: 500px;
+    position: relative;
+    margin: 50% auto;
+  background-color: rgb(64, 66, 68);
+  display: flex;
+  border: 10px;
+  color: aliceblue;
+  padding: 1rem;
+  border-radius: 10px;
+ 
+  
+  
+}
+
+.button:hover {
+    transform: scale(1.1);
+    outline: 10px;
+    outline-color: black;
+  background-color: rgb(149, 142, 152);
+  transition: all 2s ease-in-out ;
+   cursor: pointer;
+  
+
+}
+.search{
+height: 40px;
+width: 300px;
+position: absolute;
+font-weight: bold;
+font-size: 20px;
+background-color: rgb(225, 209, 209);
+ color: rgb(86, 82, 82);
+ outline-color: black;
+ outline-width: 4px;
+
+}
+.search:hover{
+    width: 400px;
+    font-size: 0px;
+}
+</style>
+</head>
+<body>
+    <div class="button">
+        <input class="search"type="search"placeholder="search here">
+    </div>
+</body>
+</html>
