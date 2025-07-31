@@ -29,7 +29,7 @@ body, html {
   background-color: #3f3e3e;
 } */
  
- .language-dropdown {
+ .lan-dropdown {
   display: inline-flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
@@ -39,12 +39,12 @@ body, html {
   color: white;
 }
 
-.language-dropdown i {
+.lan-dropdown i {
   margin-right: 8px;
   font-size: 18px;
   color: white;
 }
-.language-dropdown select {
+.lan-dropdown select {
   background: transparent;
   border: none;
   color: white;
@@ -54,7 +54,7 @@ body, html {
   cursor: pointer;
 }
 
-.language-dropdown select:focus {
+.lan-dropdown select:focus {
   outline: none;
 }
 .b{
