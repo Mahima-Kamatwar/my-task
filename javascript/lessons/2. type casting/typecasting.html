@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>type casting</h1>
+</body>
+<script type="text/javascript">
+  //1)number to string
+  let data = "abc"
+  data = String(data)
+  console.log("after type casting")
+  console.log("data is : " + data + " it's data type is : " + typeof (data))
+  //output:after type casting
+  //data is abc its  data type is string
+
+  //2) number to boolean
+  data = 0
+  data = Boolean(data)
+  console.log("data is " + data)
+  // output:data is false
+
+  //3)string to number
+  data = "123a"
+  data = Number(data)
+  console.log("data is " + data)
+  // output:data is Nan
+
+  //4)string to boolean
+  data = "mahi"
+  data = Boolean(data)
+  console.log("data is " + data)
+  // output:data is true
+
+  //5)boolean to number
+  data = true
+  data = Number(data)
+  console.log("data is " + data)
+  // output:data is true
+
+  //6)boolean to string
+  data = false
+  data = String(data)
+  console.log("data is " + data)
+  //    output:data is false
+</script>
+
+</html>

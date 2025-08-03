@@ -1,0 +1,43 @@
+Type casting- >Type casting (also known as type conversion) in JavaScript is the process of converting data from one type to another.
+Uses:
+1. Form Input Handling
+ Reason: All input values are strings — you must convert them to numbers for calculations.
+2. Prompt/Input-Based Calculations
+Example: When you get values from prompt()
+3. Date and Time Conversions
+Reason: Convert dates to timestamps or readable strings.
+
+example:
+number - > string
+number - > boolean
+
+string - > number
+string - > boolean
+
+boolean - > number
+boolean - > string
+
+ syntax:
+
+1: number to string
+ data = String(data) 
+ data = data.toString()
+
+2: number to boolean
+ data = Boolean(data)
+ if number is 0 then false else true 
+
+3: string to number"123a" - NaN 
+ data = Number(data)
+
+4: string to boolean
+ if we have an empty string/false as a string | boolean value would be false else true 
+ data = Boolean(data)
+
+5: boolean to number
+ false - 0 true - 1 
+ data = Number(data)
+
+6: boolean to string
+ true - "true" , false - "false"
+
