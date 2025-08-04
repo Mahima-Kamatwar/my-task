@@ -8,7 +8,7 @@ conditional statements are: if, if-else, if-else_if, nasted if, swtich case, (?)
         // true block
  }
 example:
-let age = 10
+let age = 16
  if(age > 18){
      console.log("can drive")
  }
@@ -18,10 +18,11 @@ console.log("programm completed")
 2.  if-else: Executes one block if the condition is true, and another if it's false.
 
  if(condition){
-        //true bloc
+        //true block
  }else{
-     // false bloc
+     // false block
  }
+ example:
  if(age > 18){
      console.log('can drive')
  }else{
@@ -64,7 +65,9 @@ if (c > a)
      console.log("c is not greater than a & b !")
  }
 
-4.  if-else_if: Checks multiple conditions in order.
+
+4.if-else_if: Checks multiple conditions in order.
+
  if(condition){
      // true block
  }else if(condition){

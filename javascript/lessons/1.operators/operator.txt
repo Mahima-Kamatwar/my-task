@@ -1,16 +1,37 @@
- * operators
+ * operators: JavaScript operators are symbols or keywords that perform operations on values (operands) and variables
 
  1. arithmatic oprators
-   + . - . * . / . %
+   + -> Addition
+   - -> Subtraction
+   * -> Multiplication
+   / -> Division
+   % -> Modulus
+
  2. increement & dcreement
-   post/pre , ++ (+1) , -- (-1)
+   post/pre
+    ++
+    --
  3. comparision oprators
-    < , > , <= ,>=, !=(not equals), == , ===
+    < -> Less than
+    > -> Greater than
+    = -> Equal to
+    >= -> Greater than equal to
+    <= -> Less than equal to
+    != -> Not equal to
+    == -> Equal to (loose)
+    === -> Equal to (strict)
+    
  4. logical oprators
-    && , || , !
+    && -> AND
+    || -> OR
+    ! -> NOT
+
  5. bitwise oprators
-    AND, OR
+    AND
+    OR
+
  6. ternary oprator
     ? (ternary statement)
+
  7. member access oprators
-      .(dot)
+   .(dot)
