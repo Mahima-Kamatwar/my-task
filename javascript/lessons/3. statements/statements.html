@@ -16,23 +16,20 @@
     if (number > 4) {
         console.log("number  is greater than 4")
     }
-    // output: number is greater than 4
 
     number = 4
     if (number > 5) {
         console.log("number is greater than 5")
     }
     console.log("end")
-    // output:end
 
     //if else statement
     number = 3
-    if (number > 4) {
-        console.log("number is greater than 4")
+    if (number > 10) {
+        console.log("number is greater than 10")
     } else {
-        console.log("number is not greater than 4")
+        console.log("number is not greater than 10")
     }
-    // output:number is not greater than 4
 
     number = 50
     if (number > 5) {
@@ -40,36 +37,60 @@
     } else {
         console.log("number is not greater than 5")
     }
-    //output:number is greater than 5
 
-    // nested if statement 
-    a = 3
-    b = 4
-    c = 5
-    if (c > a) {
-        if (c > b) {
-            console.log("5 is greater")
-        } else {
-            console.log("5 is not greater")
-        }
-    } else {
-        console.log("5 is greater")
-    }
-
-    // if else if statement
-    a = 3
-    b = 4
-    c = 2
+    // nested if statement for four numbers
+    a = 30
+    b = 40
+    c = 50
+    d = 45
     if (a > b) {
         if (a > c) {
-            console.log("3 is greater")
+            if (a > d) {
+                console.log("the largest number is " + a);
+            } else {
+                console.log("greatest number is " + d);
+            }
         } else {
-            console.log("2 is greater")
+            if (c > d) {
+                console.log("the greatest number is " + c);
+            } else {
+                console.log("greatest number is " + d);
+            }
         }
-    } else if (b > c) {
-        console.log("4 is greater")
+    } else {
+        if (b > c) {
+            if (b > d) {
+                console.log("greatest number is " + b);
+            } else {
+                console.log("greatest number is " + d);
+            }
+        } else {
+            if (c > d) {
+                console.log("greatest number is " + c);
+            } else {
+                console.log("greatest number is " + d);
+            }
+        }
     }
 
-</script>
+    // if else if statement using five variable
 
+    a = 25;
+    b = 80;
+    c = 45;
+    d = 75;
+    e = 50;
+
+    if (a > b && a > c && a > d && a > e) {
+        console.log("Greatest number is: " + a);
+    } else if (b > c && b > d && b > e) {
+        console.log("Greatest number is: " + b);
+    } else if (c > d && c > e) {
+        console.log("Greatest number is: " + c);
+    } else if (d > e) {
+        console.log("Greatest number is: " + d);
+    } else {
+        console.log("Greatest number is: " + e);
+    }
+</script>
 </html>
