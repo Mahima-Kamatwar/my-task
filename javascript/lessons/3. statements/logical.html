@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Logical Statements</h1>
+</body>
+<script type="text/javascript">
+    // logical AND
+    let username = "mahi"
+    let password = "435"
+    if (username === "mahi" && password === "385") {
+        console.log("login successfully")
+    } else {
+        console.log("invalid")
+    }
+
+    // logical OR
+    if (username === "mahi" || password === "485") {
+        console.log("login successfully")
+    } else {
+        console.log("invalid")
+    }
+
+    // logical NOT
+    let login = false
+    if (!login) {
+        console.log("correct")
+    }
+
+    // Switch Case
+    let num1 = window.prompt("enter value for num1")
+    let num2 = window.prompt("enter value for num2")
+    let operator = "*"
+
+    switch (operator) {
+        case "+":
+            alert("Addition: " + (num1 + num2));
+            break;
+        case "-":
+            alert("Subtraction: " + (num1 - num2));
+            break;
+        case "*":
+            alert("Multiplication: " + (num1 * num2));
+            break;
+        case "/":
+            alert("division: " + (num1 / num2));
+            break;
+    }
+
+
+</script>
+
+</html>
