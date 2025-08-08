@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Looping Statements</h1>
+</body>
+<script type="text/javascript">
+    // factorials
+
+    // if a variable is involve in multiplication/division then initilize with 1
+    // if add/sub then 0
+    let number = 8
+    let fact = 1
+
+    while (number != 0) {
+        fact = fact * number
+        number--
+    }
+    console.log(fact)
+    //  sum of digit
+    number = 875
+    let digit = null
+    let sum = 0
+    while (number != 0) {
+        digit = number % 10
+        sum = sum + digit
+        number = parseInt(number / 10)
+    }
+    console.log(sum)
+    // reverse
+    number = 156
+    let orignal_number = number
+    digit = null
+    sum = 0
+    while (number != 0) {
+        digit = number % 10
+        sum = sum + (digit * digit * digit)
+        number = parseInt(number / 10)
+    }
+    console.log(sum)
+    console.log(orignal_number)
+    if (orignal_number === sum) {
+        console.log(orignal_number + "is armstrong number")
+    } else {
+        console.log(orignal_number + " is not armstrong number")
+
+    }
+    //  wap in js to find and count armstrong number from range 0-1000
+    let start = 0
+    let end = 1000
+    let count = 0
+    while (start < end) {
+        number = start
+        orignal_number = number
+        digit = null
+        sum = 0
+        while (number != 0) {
+            digit = number % 10
+            sum = sum + (digit * digit * digit)
+            number = parseInt(number / 10)
+        }
+        if (orignal_number === sum) {
+            console.log(orignal_number + " is armstrong number")
+            count++
+        }
+        start++
+    }
+    console.log("their are total: " + count + " armstrong number")
+    // palindrome
+    start = 0
+     end = 100
+      count = 0
+    while (start <= end) {
+         number = start
+         orginal_number = number
+         digit = null
+        let rev = 0
+
+        if ((number > 10) && (number != 0)) {
+            while (number != 0) {
+                digit = number % 10
+                rev = rev * 10 + digit
+                number = parseInt(number / 10)
+            }
+            if (orginal_number == rev) {
+                count++
+                console.log(orginal_number + " is a palindrome !")
+            }
+        }
+        start++
+    }
+
+    console.log("Their are total : " + count + " palindrome numbers !")
+
+    // prime number
+ num = 67
+let Prime = true
+let i = 2
+
+while (i <= num / 2) {
+    if (num % i === 0) {
+        Prime = false
+    
+    }
+    i++;
+}
+
+if (Prime) {
+    console.log(num + " is a prime number");
+} else {
+    console.log(num + " is not a prime number");
+}
+
+</script>
+
+</html>

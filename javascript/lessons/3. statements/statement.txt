@@ -96,3 +96,18 @@ if (a > b) {
 
  2: looping condtional
  while, do while, for , [for array & objects : forEach, for of , for in, map, filter]
+ 
+   # while loop: In JavaScript, a while loop repeats a block of code as long as the given condition is true.
+   syntax:
+   while(condition){
+   statements
+   updation (must effect the condition)
+  }
+  example:
+  let number = 100
+  while (number >= -100) {
+     if (number % 2 == 0) {
+         console.log(number)
+     }
+     number--
+  }
