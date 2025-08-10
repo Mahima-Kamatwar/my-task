@@ -11,6 +11,7 @@
     <h1>Looping Statements</h1>
 </body>
 <script type="text/javascript">
+    // while statements
     // factorials
 
     // if a variable is involve in multiplication/division then initilize with 1
@@ -74,12 +75,12 @@
     console.log("their are total: " + count + " armstrong number")
     // palindrome
     start = 0
-     end = 100
-      count = 0
+    end = 100
+    count = 0
     while (start <= end) {
-         number = start
-         orginal_number = number
-         digit = null
+        number = start
+        orginal_number = number
+        digit = null
         let rev = 0
 
         if ((number > 10) && (number != 0)) {
@@ -99,24 +100,24 @@
     console.log("Their are total : " + count + " palindrome numbers !")
 
     // prime number
- num = 67
-let Prime = true
-let i = 2
+    num = 67
+    let Prime = true
+    let i = 2
 
-while (i <= num / 2) {
-    if (num % i === 0) {
-        Prime = false
-    
+    while (i <= num / 2) {
+        if (num % i === 0) {
+            Prime = false
+
+        }
+        i++;
     }
-    i++;
-}
 
-if (Prime) {
-    console.log(num + " is a prime number");
-} else {
-    console.log(num + " is not a prime number");
-}
-
+    if (Prime) {
+        console.log(num + " is a prime number");
+    } else {
+        console.log(num + " is not a prime number");
+    }
+   
 </script>
 
 </html>

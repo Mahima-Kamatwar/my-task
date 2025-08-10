@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Do While and FOR looping statements</h1>
+</body>
+<script type="text/javascript">
+    // do while loop
+    //     do {
+
+    //    let number = Number(window.prompt("enter number to check !"))
+    //         let orginal_number = number
+    //     let rev = 0
+    //      let digit = null
+
+    //      while (number != 0) {
+    //          digit = number % 10
+    //          rev = rev * 10 + digit
+    //          number = parseInt(number / 10)
+    //      }
+    //      if (orginal_number == rev) {
+    //          console.log(orginal_number + " is a palindrome !")
+    //      } else {
+    //          console.log(orginal_number + " is not a palindrome !")
+    //      }
+
+    //      choice = window.confirm("do you wish to continue !")
+
+    //  } while (choice)
+
+
+
+
+    // for statement
+
+    //  wap in js to write all odd numbers from 0 to 50
+    for (let start = 0; start <= 50; start++) {
+        if (start % 2 !== 0) {
+            console.log(start)
+        }
+    }
+    console.log("odd program complete")
+
+
+
+    //   factorial
+    let fact = 1
+    for (let number = 6; number != 0; number--) {
+        fact = fact * number
+    }
+    console.log(fact)
+    console.log("factorial complete")
+    // sum of digits
+    let digit = null
+    let sum = 0
+    for (let number = 475; number != 0;) {
+        digit = number % 10
+        sum = sum + digit
+        number = parseInt(number / 10)
+    } console.log(sum)
+    console.log("sum of digit complete")
+
+
+    // reverse a number(error)
+    // let orignal_number = number
+    // digit = 0
+    // sum = 0
+    // for (let number= 153; number != 0; number++) {
+    //     digit = n % 10
+    //     sum = sum + (digit * digit * digit)
+    //     number = parseInt(number / 10)
+    // }
+
+    // console.log(sum)
+    // console.log(orignal_number)
+    // if (orignal_number === sum) {
+    //     console.log(orignal_number + "is armstrong number")
+    // } else {
+    //     console.log(orignal_number + " is not armstrong number")
+
+    // }
+
+
+    // find and count armstrong number from range 0-1000
+    let count = 0
+    for (let start = 0, end = 1000; start < end; start++) {
+        let number = start
+        let orignal_number = number
+        let digit = 0
+        let sum = 0
+        while (number != 0) {
+            let digit = number % 10
+            sum = sum + (digit * digit * digit)
+            number = parseInt(number / 10)
+        }
+        if (orignal_number === sum) {
+            console.log(orignal_number + " is armstrong number")
+            count++
+        }
+    } console.log("Total armstrong numbers are " + count)
+
+
+    // palindrome number 0 to 200
+
+    for (let start = 0, end = 200, count = 0; start <= end; start++) {
+        number = start
+        orginal_number = number
+        digit = null
+        let rev = 0
+
+        if ((number > 100) && (number != 0)) {
+            while (number != 0) {
+                digit = number % 10
+                rev = rev * 10 + digit
+                number = parseInt(number / 10)
+            }
+            if (orginal_number == rev) {
+                count++
+                console.log(orginal_number + " is a palindrome !")
+
+            }
+        }
+    } console.log("palindrome complete")
+
+    // prime number 1 to 100
+    for (let start = 1, end = 100; start <= end; start++) {
+        let num = start;
+        let prime = true;
+        if (num == 1) {
+            prime = false;
+        } else {
+            let i = 2;
+            while ((i * i) <= num) {
+                if (num % i === 0) {
+                    prime = false;
+                    break;
+                }
+                i++;
+            }
+        }
+        if (prime) {
+            console.log(num + " is Prime.");
+        }
+
+    } console.log("prime completed")
+
+</script>
+
+</html>

@@ -103,6 +103,7 @@ if (a > b) {
    statements
    updation (must effect the condition)
   }
+  
   example:
   let number = 100
   while (number >= -100) {
@@ -111,3 +112,31 @@ if (a > b) {
      }
      number--
   }
+
+  # Do while loop: Runs the block at least once, then repeats while the condition is true.
+    syntax:
+    do{
+        statement
+        updation
+    }while(condition)
+
+    example:
+    let number=10
+    do{
+        console.log(number)
+        number++
+    }while(number < 10)
+
+  #For loop: Runs a block of code a specific number of times.
+  syntax:
+  for(initilize;condition;updation){
+    statement
+  }
+  
+  example:
+   for (let start = 0; start <= 100; start++) {
+        if (start % 2 !== 0) {
+            console.log(start)
+        }
+    }
+    console.log("odd program complete")
