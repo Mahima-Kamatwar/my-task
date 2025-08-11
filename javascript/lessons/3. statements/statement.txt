@@ -113,7 +113,7 @@ if (a > b) {
      number--
   }
 
-  # Do while loop: Runs the block at least once, then repeats while the condition is true.
+  # Do while loop: Runs the block at least once , then repeats while the condition is true.
     syntax:
     do{
         statement
@@ -127,11 +127,18 @@ if (a > b) {
         number++
     }while(number < 10)
 
-  #For loop: Runs a block of code a specific number of times.
+
+
+  # For loop: Runs a block of code a specific number of times.
   syntax:
-  for(initilize;condition;updation){
+  for(initilize; condition; updation){
     statement
   }
+   Initialization :- Executes once before the loop starts(usually used to set a counter).
+  
+   Condition :- Checked before each iteration ; loop runs if true.
+  
+   Increment/Decrement :- Updates the loop variable after each iteration
   
   example:
    for (let start = 0; start <= 100; start++) {
