@@ -56,6 +56,8 @@
     }
     console.log(fact)
     console.log("factorial complete")
+
+    
     // sum of digits
     let digit = null
     let sum = 0
@@ -67,89 +69,72 @@
     console.log("sum of digit complete")
 
 
-    // reverse a number(error)
-    // let orignal_number = number
-    // digit = 0
-    // sum = 0
-    // for (let number= 153; number != 0; number++) {
-    //     digit = n % 10
-    //     sum = sum + (digit * digit * digit)
-    //     number = parseInt(number / 10)
-    // }
+    // reverse a number
 
-    // console.log(sum)
-    // console.log(orignal_number)
-    // if (orignal_number === sum) {
-    //     console.log(orignal_number + "is armstrong number")
-    // } else {
-    //     console.log(orignal_number + " is not armstrong number")
-
+    // digit = 0;
+    // let rev = 0;
+    // for (let num = 123; num > 0; num =pareseInt(num / 10)) {
+    //     digit = num % 10;
+    //     rev = rev * 10 + rev;
     // }
+    // console.log("Reverse of number is" + rev);
+
 
 
     // find and count armstrong number from range 0-1000
-    let count = 0
-    for (let start = 0, end = 1000; start < end; start++) {
-        let number = start
-        let orignal_number = number
-        let digit = 0
-        let sum = 0
-        while (number != 0) {
-            let digit = number % 10
-            sum = sum + (digit * digit * digit)
-            number = parseInt(number / 10)
+    let count = 0;
+    for (let i = 1; i <= 1000; i++) {
+        let digit = 0;
+        let sum = 0;
+
+        for (let num = i; num > 0; num = parseInt(num / 10)) {
+            digit = num % 10;
+            sum = sum + (digit * digit * digit);
         }
-        if (orignal_number === sum) {
-            console.log(orignal_number + " is armstrong number")
-            count++
+        if (sum === i) {
+            console.log(sum + " is Armstrong number.");
+            count++;
         }
-    } console.log("Total armstrong numbers are " + count)
+    }
+    console.log(count)
+
 
 
     // palindrome number 0 to 200
+    count = 0;
 
-    for (let start = 0, end = 200, count = 0; start <= end; start++) {
-        number = start
-        orginal_number = number
-        digit = null
-        let rev = 0
+    for (let i = 1; i <= 200; i++) {
+        let digit = 0;
+        let rev = 0;
 
-        if ((number > 100) && (number != 0)) {
-            while (number != 0) {
-                digit = number % 10
-                rev = rev * 10 + digit
-                number = parseInt(number / 10)
-            }
-            if (orginal_number == rev) {
-                count++
-                console.log(orginal_number + " is a palindrome !")
-
-            }
-        }
-    } console.log("palindrome complete")
-
-    // prime number 1 to 100
-    for (let start = 1, end = 100; start <= end; start++) {
-        let num = start;
-        let prime = true;
-        if (num == 1) {
-            prime = false;
-        } else {
-            let i = 2;
-            while ((i * i) <= num) {
-                if (num % i === 0) {
-                    prime = false;
-                    break;
-                }
-                i++;
-            }
-        }
-        if (prime) {
-            console.log(num + " is Prime.");
+        for (let num = i; num > 0; num = parseInt(num / 10)) {
+            digit = num % 10;
+            rev = rev * 10 + digit;
         }
 
-    } console.log("prime completed")
+        if (rev === i) {
+            console.log(i + " is a Palindrome number.");
+            count++;
+        }
+    }
 
+    console.log("Total Palindrome numbers: " + count);
+
+
+
+    // // prime number 1 to 50
+    for (let i = 2; i <= 50; i++) {
+        let Prime = true;
+        for (let j = 2; (j * j) <= i; j++) {
+            if (i % j == 0) {
+                Prime = false;
+                break;
+            }
+        }
+        if (Prime) {
+            console.log(i + " is Prime.");
+        }
+    } console.log("prime number complete")
 </script>
 
 </html>
