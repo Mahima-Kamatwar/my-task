@@ -57,7 +57,7 @@
     console.log(fact)
     console.log("factorial complete")
 
-    
+
     // sum of digits
     let digit = null
     let sum = 0
@@ -70,16 +70,13 @@
 
 
     // reverse a number
-
-    // digit = 0;
-    // let rev = 0;
-    // for (let num = 123; num > 0; num =pareseInt(num / 10)) {
-    //     digit = num % 10;
-    //     rev = rev * 10 + rev;
-    // }
-    // console.log("Reverse of number is" + rev);
-
-
+    digit = 0;
+    let rev = 0;
+    for (let number = 543; number > 0; number = parseInt(number / 10)) {
+        digit = number % 10;
+        rev = rev * 10 + digit;
+    }
+    console.log("Reverse number is " + rev);
 
     // find and count armstrong number from range 0-1000
     let count = 0;
@@ -101,24 +98,46 @@
 
 
     // palindrome number 0 to 200
-    count = 0;
+    // count = 0;
 
-    for (let i = 1; i <= 200; i++) {
-        let digit = 0;
-        let rev = 0;
+    // for (let i = 1; i <= 200; i++) {
+    //     let digit = 0;
+    //     let rev = 0;
 
-        for (let num = i; num > 0; num = parseInt(num / 10)) {
-            digit = num % 10;
-            rev = rev * 10 + digit;
+    //     for (let num = i; num > 0; num = parseInt(num / 10)) {
+    //         digit = num % 10;
+    //         rev = rev * 10 + digit;
+    //     }
+
+    //     if (rev === i) {
+    //         console.log(i + " is a Palindrome number.");
+    //         count++;
+    //     }
+    // }
+
+    // console.log("Total Palindrome numbers: " + count);
+
+    count = 0
+    for (let start = 0, end = 300; start <= end; start++) {
+        number = start
+        orginal_number = number
+        digit = null
+        let rev = 0
+
+        if ((number > 100) && (number != 0)) {
+            while (number != 0) {
+                digit = number % 10
+                rev = rev * 10 + digit
+                number = parseInt(number / 10)
+            }
+            if (orginal_number == rev) {
+                console.log(orginal_number + " is a palindrome !")
+                count++
+
+            }
         }
+    } console.log("total palindrome number " + count)
 
-        if (rev === i) {
-            console.log(i + " is a Palindrome number.");
-            count++;
-        }
-    }
-
-    console.log("Total Palindrome numbers: " + count);
 
 
 
