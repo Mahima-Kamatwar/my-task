@@ -55,3 +55,14 @@ let string1 = "hello world !"
 console.log(string1.substring(0, 5))
 console.log(string1.substring(5,string1.length))
 
+// difference between slice and substring
+let text = "Mahimaaa";
+
+// slice
+console.log(text.slice(-5));     // "imaaa" (negative index: last 6 chars)
+console.log(text.slice(4, 1));   // "" (empty because start > end)
+
+// substring
+console.log(text.substring(-5));   // "Mahimaaa" (negative becomes 0)
+console.log(text.substring(4, 1)); // "ahi" (swaps: works as substring(1,4))
+
