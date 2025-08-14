@@ -1,0 +1,99 @@
+string manipulation: 
+In JavaScript, string manipulation means creating, modifying, or analyzing text values (strings) using built-in methods and operators.
+
+properties/methods
+property: length
+methods: chartAt slice uppercse lowercase replace replace all trim occurence
+
+* length
+let string1 = "hello world !"
+
+console.log(typeof (string1))
+
+console.log(string1.length)
+
+
+*case
+console.log(string1.toUpperCase())
+console.log(string1.toLowerCase())
+
+
+*indexing
+ console.log(string1.charAt(0))
+ console.log(string1.charAt(1))
+ console.log(string1.charAt(2))
+ console.log(string1.charAt(3))
+ console.log(string1.charAt(4))
+ console.log(string1.charAt(5))
+ console.log(string1.charAt(6))
+ console.log(string1.charAt(7))
+ console.log(string1.charAt(12))
+ console.log(string1.charAt(15)) // will return null(nothing/empty)
+ empty string = false
+
+* Difference between index and position
+
+Index specifically refers to a numerical or sequential identifier assigned to an element within a structured collection, such as an array, list, or string. Indexes typically start from zero or one and are used to uniquely identify and access individual elements within that collection.
+Position generally refers to the location or place of something. It describes where an item or entity exists within a given space or sequence. This can be a physical location, a place in a queue, or a point in a narrative.
+
+
+*slice(start index,end index), substring(start index, end index)
+
+console.log(string1.slice(0, 5))
+console.log(string1.slice(5, string1.length))
+
+console.log(string1.substring(0, 5))
+console.log(string1.substring(5,string1.length))
+
+*Difference between slice and substring
+The substring() and slice() methods are almost identical, but there are a couple of subtle differences between the two, especially in the way negative arguments are dealt with.
+The substring() method swaps its two arguments if indexStart is greater than indexEnd, meaning that a string is still returned. The slice() method returns an empty string if this is the case.
+
+1. Handling Negative Indices:
+slice(): Allows negative indices, which are interpreted as offsets from the end of the string. For example, str.slice(-3) extracts the last three characters.
+substring():Treats any negative index as 0. Therefore, str.substring(-5, 2) is equivalent to str.substring(0, 2). 
+
+2. Handling startIndex Greater Than endIndex:
+slice(): If startIndex is greater than endIndex, slice() returns an empty string.
+substring(): If startIndex is greater than endIndex, substring() automatically swaps the two arguments before extracting the substring. For example, str.substring(5, 2) is treated as str.substring(2, 5). 
+
+3. Applicability:
+slice(): Can be used on both strings and arrays.
+substring(): Is specific to strings.
+
+
+*occurence
+console.log(string1.indexOf("l"))
+// returns the first occurence of passed char
+console.log(string1.lastIndexOf("l"))
+// returns the last occurence of passed char
+
+
+*replace and replace all
+ let string2 = "this is some data !"
+
+ string2 = string2.replace("is","was")
+// will replace first occurence 
+
+ string2 = string2.replaceAll("is","was")
+// will replace all occurence 
+
+ console.log(string2)
+
+ *trim
+example = "   mahima kamatwar   "
+trim() // to remove leading and trailing spaces from the string 
+
+
+*all methods
+let fname = "  mahima kamatwar "
+name = name.trim()
+
+name = name.replace(name.charAt(0),name.charAt(0).toUpperCase())
+
+name = name.replace(name.charAt(name.indexOf(" ") + 1),name.charAt(name.indexOf(" ") + 1).toUpperCase())
+
+console.log(name)
+
+
+
