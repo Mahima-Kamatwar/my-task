@@ -41,14 +41,38 @@ console.log("count complete")
 
 // find unique character within a string
 
-i = 0
-while (i < fname.length) {
-    if (fname.indexOf(fname.charAt(i)) == fname.lastIndexOf(fname.charAt(i))) {
-        console.log(fname.charAt(i));
+let string = "this is javascript language";
+let uniquestring = "";
+// find unique character
+for (let i = 0; i < string.length; i++) {
+    let ch = string[i];
+    let flag = false;
+
+    for (let check = 0; check < uniquestring.length; check++) {
+        if (ch === uniquestring[check]) {
+            flag = true;
+            break;
+        }
     }
-    i++
+
+    if (!flag && ch !== " ") {
+        uniquestring += ch;
+    }
 }
-console.log("unique character complete")
+
+// count 
+for (let i = 0; i < uniquestring.length; i++) {
+    let ch = uniquestring[i];
+    let count = 0;
+
+    for (let check = 0; check < string.length; check++) {
+        if (ch === string[check]) {
+            count++;
+        }
+    }
+
+    console.log(ch + "-" + count);
+}
 
 // substring
 let string1 = "hello world !"
