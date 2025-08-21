@@ -1,0 +1,95 @@
+
+array : collection of element
+
+elements will be stored in contnious memory locations
+
+ 1 2 3
+ 1000 - 1 - 0
+ 1004 - 2 - 1
+ 1008 - 3 - 2
+ 1012 - 4 - 3
+
+indexed
+
+let numbers = [1,2,3,4,5,6,7,8,9,10]
+1 - 0
+2 - 1
+3 - 2
+.
+.
+.
+10- 9(length-1)
+
+let elements = [1,"hello", true, ()=>{console.log("hello")}, [] , {} , NaN, Null] //contain various element
+
+
+array of objects
+
+access, update, traverse(forEach, for of, map) , search, sort 
+
+*access
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+ console.log(numbers[0])
+ console.log(numbers[1])
+ console.log(numbers[2])
+ console.log(numbers[3])
+ console.log(numbers[4])
+ console.log(numbers[5])
+ console.log(numbers[6])
+ console.log(numbers[numbers.length - 1])
+
+ numbers[0] = 1000
+
+ console.log(numbers[0])
+
+*update
+
+to add a new element within the array
+ Array.push(element) , Array.unshift(element)
+
+ to remove element from array 
+ Array.pop(), arr.shift()
+
+ index wise
+  Array.splice(start index, delete count,replacement(optional))
+
+*traverse
+
+(for of)
+for(let element of array){
+    //we can use element 
+}
+
+(forEach)
+array.forEach((element,index)=>{
+    // we can use both element and index
+})
+
+foreach won't be able to return anything
+
+(map)
+array.map((element,index)=>{})
+
+can/will return a new array out of the called array
+
+*search
+
+Array.includes(element)
+ arr.filter((element, index) => {
+     //we can use both element and index
+ })
+
+ *sort
+ ascending to descending
+ descending to ascending
+
+function compareFunction(a, b) {
+  // return < 0 → a comes before b
+  // return 0   → keep same order
+  // return > 0 → a comes after b
+}
+
+arr.sort();                       // default
+arr.sort((a, b) => a - b);        // ascending numbers
+arr.sort((a, b) => b - a);        // descending numbers
