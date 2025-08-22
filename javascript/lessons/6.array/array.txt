@@ -93,3 +93,10 @@ function compareFunction(a, b) {
 arr.sort();                       // default
 arr.sort((a, b) => a - b);        // ascending numbers
 arr.sort((a, b) => b - a);        // descending numbers
+
+
+search algorithm
+linear search , binary search
+
+sort algorithm
+bubble sort , selection sort
