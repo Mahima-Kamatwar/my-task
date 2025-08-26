@@ -99,4 +99,7 @@ search algorithm
 linear search , binary search
 
 sort algorithm
-bubble sort , selection sort
+bubble sort :swapping
+
+ selection sort:/first set minvalue=arr[0] then compare with other array values if  the value is smaller than minvalue then swapped it 
+//repeat this until the array is sorted

@@ -1,0 +1,21 @@
+In JavaScript, an object is a collection of related data and functionality, stored as key–value pairs.
+ example: let person = {
+    name: "Mahima",
+    age: 21,
+    city: "Pune"
+};
+
+console.log(person.name);   // "Mahima"
+console.log(person["age"]); // 21
+
+array of object
+
+let students = [
+    { name: "Mahi", age: 21, grade: "A" },
+    { name: "Isha", age: 20, grade: "B" },
+    { name: "Nau", age: 22, grade: "A+" },
+    { name: "Adi", age: 19, grade: "C" }
+];
+
+console.log(students[0].name);   // Mahi
+console.log(students[2].grade);  // A+
