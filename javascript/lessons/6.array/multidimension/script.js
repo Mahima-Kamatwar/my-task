@@ -104,12 +104,6 @@ let arr = [
 console.log(arr.slice(0, 2))
 // [[1,2,3], [4,5,6]]
 
-
-// index of & lastindex of
-// let subArr = arr[2]
-// console.log(arr.indexOf(subArr))   
-// console.log(arr.lastIndexOf(subArr)) 
-
 // splice
 arr.splice(1, 1, 9, "hello")
 console.log(arr)
