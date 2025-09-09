@@ -26,7 +26,7 @@
         }
 
         #color{
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: bolder;
             border: 1px solid white;
         }
@@ -77,9 +77,23 @@
 <!-- example2 -->
    <div id="box">Hover or Click Me</div>
   <p id="output">Do some action with your mouse...</p>
- -
+ <!-- -form -->
+<h2>Registration Form</h2>
+    <form id="registrationForm">
+        <!-- <label for="username">Username:</label> -->
+        <label>Username:</label>
+        <input type="text" id="username" name="username" required minlength="3" /><br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" name="email" required /><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <p id="output"></p>
 
 </body>
-<script src="./Dom manipulation/event.js"></script>
+<script src="./event.js"></script>
 
 </html>

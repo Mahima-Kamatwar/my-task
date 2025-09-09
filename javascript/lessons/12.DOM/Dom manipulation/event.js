@@ -215,4 +215,115 @@ document.addEventListener(
   },
   false,
 );
+inputBox.addEventListener("keydown", (e) => {
+  inputBox.value = "Key down: " + e.key;
+});
+
+// //form event
+ form = document.getElementById('registrationForm');
+let username = document.getElementById('username');
+let email = document.getElementById('email');
+ output = document.getElementById('output');
+
+// Submit event
+form.addEventListener('submit', function(event) {
+    output.textContent = `Form Submitted! Username: ${username.value}, Email: ${email.value}`;
+    console.log('submit event triggered');
+});
+
+// Reset event
+form.addEventListener('reset', function(event) {
+    output.textContent = "Form has been reset.";
+    console.log('reset event triggered');
+});
+
+// Input event
+username.addEventListener('input', function(event) {
+    console.log('input event triggered on username:', username.value);
+});
+
+email.addEventListener('input', function(event) {
+    console.log('input event triggered on email:', email.value);
+});
+
+// Change event
+username.addEventListener('change', function(event) {
+    console.log('change event triggered on username:', username.value);
+});
+
+email.addEventListener('change', function(event) {
+    console.log('change event triggered on email:', email.value);
+});
+
+// Focus event
+username.addEventListener('focus', function(event) {
+    console.log('focus event triggered on username');
+});
+
+email.addEventListener('focus', function(event) {
+    console.log('focus event triggered on email');
+});
+
+// Blur event
+username.addEventListener('blur', function(event) {
+    console.log('blur event triggered on username');
+});
+
+email.addEventListener('blur', function(event) {
+    console.log('blur event triggered on email');
+});
+
+// Invalid event
+username.addEventListener('invalid', function(event) {
+    output.textContent = "Username is invalid!";
+    console.log('invalid event triggered on username');
+});
+
+email.addEventListener('invalid', function(event) {
+    output.textContent = "Email is invalid!";
+    console.log('invalid event triggered on email');
+});
+
+
+// //window events
+
+// When the page is fully loaded
+window.addEventListener('load', function() {
+    console.log('Page loaded');
+});
+
+// When the window is resized
+window.addEventListener('resize', function() {
+    console.log('Window resized');
+});
+
+// When the user scrolls the page
+window.addEventListener('scroll', function() {
+    console.log('Page scrolled');
+});
+
+// Before the window is closed or refreshed
+window.addEventListener('beforeunload', function(event) {
+    console.log('Before unload');
+});
+
+// When the window is unloaded
+window.addEventListener('unload', function() {
+    console.log('Window unloaded');
+});
+
+// When a JavaScript error occurs
+window.addEventListener('error', function(event) {
+    console.log('Error occurred:', event.message);
+});
+
+// When the window gains focus
+window.addEventListener('focus', function() {
+    console.log('Window focused');
+});
+
+// When the window loses focus
+window.addEventListener('blur', function() {
+    console.log('Window lost focus');
+});
 
