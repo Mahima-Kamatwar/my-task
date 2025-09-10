@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Enter your information</h2>
+    <form id="entryForm">
+        <input type="text" id="name" placeholder="Name">
+        <input type="number" id="age" placeholder="Age">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Entries Table</h2>
+    <table id="entriesTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Entries will be appended here -->
+        </tbody>
+    </table>
+
+    <script>
+        let arr = []; // Array to store entries
+
+        let form = document.getElementById("entryForm")
+        let tableBody = document.getElementById("entriesTable").querySelector("tbody")
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value
+            let age = document.getElementById("age").value
+            let email = document.getElementById("email").value
+
+            arr.push({ name, age, email })
+
+            // Call function to add this entry to the table
+            createTable(name, age, email)
+
+            form.reset()
+        })
+
+        function createTable(name, age, email) {
+            let newRow = document.createElement("tr")
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${age}</td>
+                <td>${email}</td>
+            `
+            tableBody.appendChild(newRow)
+        }
+    </script>
+
+</body>
+
+</html>
