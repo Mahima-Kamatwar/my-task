@@ -9,38 +9,34 @@
 </head>
 <style>
    
-    .circle {
-        width: 150px;
-        height: 150px;
-        background-color: rgb(96, 16, 99);
-        margin: 20% auto;
+      #circle {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(141, 23, 129);
+             margin: 20% auto;
         border-radius: 100%;
-        display: none;
-    }
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
 
-    .btn {
+        #circle.show {
+            opacity: 1;
+            visibility: visible;
+        }
+ .btn {
         background: red;
         color: white;
         padding: 1rem 2rem;
         border-radius: 10px;
         margin-left: 45% ;
-        
         border: none;
-        cursor: pointer;
-    }
-
-    .show {
-        display: block;
-    }
-
-    .hide {
-        display: none;
-    }
+        cursor: pointer;}
 </style>
 
 <body>
-    <div id="circle" class="circle show"></div>
-    <button class="btn">hover</button>
+    <div id="circle" class="show"></div>
+    <button class="btn">toggle</button>
 </body>
 <script src="./script.js"></script>
 
