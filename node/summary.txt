@@ -1,0 +1,35 @@
+Server-side JavaScript means using JavaScript to run on the server, instead of (or along with) the browser.
+
+Normally, JavaScript was first introduced to run in the client-side (browser), handling things like button clicks, animations, 
+and form validation. But with technologies like Node.js, JavaScript can also execute on the server-side, where it can:
+
+Handle HTTP requests/responses
+Access databases
+Perform file operations
+Run business logic before sending data to the client
+
+RESTFUL Architecture
+RESTful architecture, or Representational State Transfer, is an architectural style for designing networked applications, 
+particularly web services. It emphasizes a stateless, client-server communication model and leverages standard HTTP methods for interacting with resources.
+
+HTTP:
+HTTP (Hypertext Transfer Protocol) is the standard language and set of rules used for communication between web browsers and web servers,
+ enabling the transfer of data to display websites.
+
+ Methods:
+
+GET: Used to request data from a specified resource. It should only retrieve data and have no other effect on the data.
+POST: Used to send data to a server to create or update a resource. The data is included in the request body. 
+PUT: Used to update a resource or create a new one if it does not exist, replacing the entire content at a specific location.
+PATCH: Used to apply partial modifications to a resource. It only sends the changes needed to update the resource.
+DELETE: Used to delete a specified resource.
+
+status code:
+
+HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
