@@ -5,47 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./game.css">
+    <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Tic Tac Toe Game Using JavaScript</h1>
+        <div class="game-header">
+            <h2>Tic Tac Toe</h2>
+            <h5 class="info">Press Start Button </h5>
             <div class="player-info">
-                <span class="player player-x">Player 1 - X</span>
-                <span class="player player-o">Player 2 - O</span>
+                <span class="player player-1">Player - X</span>
+                <span class="player player-2">Player - O</span>
             </div>
+
         </div>
         <div class="grid-container">
-            <div class="main-grid">
-                <div data-item="0" class="grid-item"></div>
-                <div data-item="1" class="grid-item"></div>
-                <div data-item="2" class="grid-item"></div>
-                <div data-item="3" class="grid-item"></div>
-                <div data-item="4" class="grid-item"></div>
-                <div data-item="5" class="grid-item"></div>
-                <div data-item="6" class="grid-item"></div>
-                <div data-item="7" class="grid-item"></div>
-                <div data-item="8" class="grid-item"></div>
+            <div class="game-board">
+                <div class="cell" data-item="0"></div>
+                <div class="cell" data-item="1"></div>
+                <div class="cell" data-item="2"></div>
+                <div class="cell" data-item="3"></div>
+                <div class="cell" data-item="4"></div>
+                <div class="cell" data-item="5"></div>
+                <div class="cell" data-item="6"></div>
+                <div class="cell" data-item="7"></div>
+                <div class="cell" data-item="8"></div>
             </div>
         </div>
         <div class="result">
             <span class="title">Result</span>
             <div class="controls">
-                <button>Start</button>
-                <button id="resetButton">Reset Game</button>
-
+                <button class="startBtn">Start</button>
             </div>
             <div class="clock">
-                <span class="time"> 00:00:00</span>
+                <span class="time">00:00:00</span>
             </div>
-
         </div>
     </div>
-
 </body>
-
-<script src="./game.js"></script>
+<script src="game.js"></script>
 
 </html>
