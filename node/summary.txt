@@ -24,7 +24,7 @@ PUT: Used to update a resource or create a new one if it does not exist, replaci
 PATCH: Used to apply partial modifications to a resource. It only sends the changes needed to update the resource.
 DELETE: Used to delete a specified resource.
 
-status code:
+HTTP status code:
 
 HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
 
@@ -33,3 +33,92 @@ Successful responses (200 – 299)
 Redirection messages (300 – 399)
 Client error responses (400 – 499)
 Server error responses (500 – 599)
+
+1– Informational Responses : These codes indicate that the request has been received and the process is continuing.
+
+| Code | Name                | Meaning                                                                                  |
+| ---- | ------------------- | ---------------------------------------------------------------------------------------- |
+| 100  | Continue            | The server received the headers and the client should continue sending the request body. |
+| 101  | Switching Protocols | The client requested a protocol change, and the server is switching.                     |
+| 102  | Processing (WebDAV) | The server is processing the request but no response is available yet.                   |
+| 103  | Early Hints         | Sent before a final response, mainly for preloading resources.                           |
+
+
+2- Successful Responses : These codes mean the request was successfully received, understood, and accepted.
+
+| Code | Name                          | Meaning                                                                                                           |
+| ---- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| 200  | OK                            | Standard response for a successful request.                                                                       |
+| 201  | Created                       | The request has created a new resource.                                                                           |
+| 202  | Accepted                      | Request accepted but not yet processed.                                                                           |
+| 203  | Non-Authoritative Information | The server is returning metadata from a local copy instead of the origin server.                                  |
+| 204  | No Content                    | Request successful but no content to return.                                                                      |
+| 205  | Reset Content                 | Instructs client to reset the document view (like clearing form fields).                                          |
+| 206  | Partial Content               | The server is delivering only part of the resource (used in range requests).                                      |
+| 207  | Multi-Status (WebDAV)         | Provides information about multiple resources.                                                                    |
+| 208  | Already Reported              | Status for WebDAV to avoid repeating enumerations.                                                                |
+| 226  | IM Used                       | The server has fulfilled a GET request for the resource and the response is a representation of a delta encoding. |
+
+
+3- Redirection messages : These codes indicate that the client must take additional action to complete the request.
+
+| Code | Name               | Meaning                                                              |
+| ---- | ------------------ | -------------------------------------------------------------------- |
+| 300  | Multiple Choices   | Multiple options for the resource; client must choose.               |
+| 301  | Moved Permanently  | Resource has permanently moved to a new URL.                         |
+| 302  | Found              | Resource is temporarily at a different URL.                          |
+| 303  | See Other          | Redirect to another URL using GET method.                            |
+| 304  | Not Modified       | Resource has not changed since last request; use cached version.     |
+| 305  | Use Proxy          | Resource must be accessed through a proxy (rarely used).             |
+| 307  | Temporary Redirect | Request should repeat with the same method at a different URL.       |
+| 308  | Permanent Redirect | Request should repeat with the same method at a new URL permanently. |
+
+4-Client error responses : These codes indicate problems with the request sent by the client.
+
+| Code | Name                            | Meaning                                                                     |
+| ---- | ------------------------------- | --------------------------------------------------------------------------- |
+| 400  | Bad Request                     | The server cannot understand the request.                                   |
+| 401  | Unauthorized                    | Authentication is required or failed.                                       |
+| 402  | Payment Required                | Reserved for future use (rarely used).                                      |
+| 403  | Forbidden                       | Server refuses to fulfill the request.                                      |
+| 404  | Not Found                       | Resource does not exist.                                                    |
+| 405  | Method Not Allowed              | HTTP method is not allowed for this resource.                               |
+| 406  | Not Acceptable                  | Server cannot return a response in a format acceptable by the client.       |
+| 407  | Proxy Authentication Required   | Client must authenticate with a proxy.                                      |
+| 408  | Request Timeout                 | Server timed out waiting for request.                                       |
+| 409  | Conflict                        | Request conflicts with current state of resource (e.g., editing conflicts). |
+| 410  | Gone                            | Resource no longer exists and has no forwarding address.                    |
+| 411  | Length Required                 | Server requires Content-Length header.                                      |
+| 412  | Precondition Failed             | One or more preconditions in request headers failed.                        |
+| 413  | Payload Too Large               | Request body is too large for the server to process.                        |
+| 414  | URI Too Long                    | Requested URI is too long.                                                  |
+| 415  | Unsupported Media Type          | Server refuses the request because the format is not supported.             |
+| 416  | Range Not Satisfiable           | Requested range cannot be fulfilled.                                        |
+| 417  | Expectation Failed              | Server cannot meet requirements in Expect header.                           |
+| 418  | I'm a Teapot                    | April Fools’ joke in HTTP spec (RFC 2324).                                  |
+| 421  | Misdirected Request             | Request was sent to a server that cannot handle it.                         |
+| 422  | Unprocessable Entity            | Request is well-formed but cannot be processed.                             |
+| 423  | Locked                          | Resource is locked (WebDAV).                                                |
+| 424  | Failed Dependency               | Request failed because a previous request failed (WebDAV).                  |
+| 425  | Too Early                       | Server is unwilling to process request that might be replayed.              |
+| 426  | Upgrade Required                | Client should switch to a different protocol.                               |
+| 428  | Precondition Required           | Server requires preconditions to prevent issues like lost updates.          |
+| 429  | Too Many Requests               | Client sent too many requests in a given time.                              |
+| 431  | Request Header Fields Too Large | Headers too large for server to process.                                    |
+| 451  | Unavailable For Legal Reasons   | Resource unavailable due to legal reasons (e.g., censorship).               |
+
+5-Server error responses : These codes indicate that the server failed to fulfill a valid request.
+
+| Code | Name                            | Meaning                                                        |
+| ---- | ------------------------------- | -------------------------------------------------------------- |
+| 500  | Internal Server Error           | Generic server error.                                          |
+| 501  | Not Implemented                 | Server does not support the requested functionality.           |
+| 502  | Bad Gateway                     | Invalid response from an upstream server.                      |
+| 503  | Service Unavailable             | Server is temporarily unavailable (overloaded or maintenance). |
+| 504  | Gateway Timeout                 | Upstream server did not respond in time.                       |
+| 505  | HTTP Version Not Supported      | Server does not support the HTTP version used.                 |
+| 506  | Variant Also Negotiates         | Server error in content negotiation.                           |
+| 507  | Insufficient Storage            | Server cannot store the representation needed.                 |
+| 508  | Loop Detected                   | Server detected infinite loop while processing.                |
+| 510  | Not Extended                    | Further extensions required to fulfill request.                |
+| 511  | Network Authentication Required | Client needs to authenticate to gain network access.           |

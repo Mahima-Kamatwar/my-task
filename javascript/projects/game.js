@@ -118,11 +118,11 @@ startBtn.addEventListener("click", () => {
 
 
 let timeInterval;
-let timeLeft = 59; // countdown from 59 seconds
+let timeLeft = 20; // countdown from 20 seconds
 
 function showCurrentTime() {
     clearInterval(timeInterval); // reset previous timer
-    timeLeft = 59;
+    timeLeft = 20;
 
     timeInterval = setInterval(() => {
         // add leading zero if timeLeft is single-digit
@@ -133,7 +133,6 @@ function showCurrentTime() {
 
         if (timeLeft < 0) {
             clearInterval(timeInterval);
-            resultClock.innerHTML = "Time's Up!";
             gameOver = true;
             isGameStarted = false;
             resultTitle.innerHTML = "Game Over (Time Up)";
