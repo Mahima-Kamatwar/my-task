@@ -3,10 +3,13 @@ Server-side JavaScript means using JavaScript to run on the server, instead of (
 Normally, JavaScript was first introduced to run in the client-side (browser), handling things like button clicks, animations, 
 and form validation. But with technologies like Node.js, JavaScript can also execute on the server-side, where it can:
 
-Handle HTTP requests/responses
-Access databases
-Perform file operations
-Run business logic before sending data to the client
+Key Uses of Server-Side JavaScript
+
+Web Servers & APIs: Build RESTful APIs or full web apps.
+Database Operations: CRUD operations with MongoDB, MySQL, etc.
+Authentication & Authorization: Handle login, JWT tokens, sessions.
+Real-Time Apps: Chat apps, notifications (with WebSockets).
+File Handling: Read/write files on the server.
 
 RESTFUL Architecture
 RESTful architecture, or Representational State Transfer, is an architectural style for designing networked applications, 
