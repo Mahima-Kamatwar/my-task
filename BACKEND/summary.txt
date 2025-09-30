@@ -125,3 +125,59 @@ Server error responses (500 – 599)
 | 508  | Loop Detected                   | Server detected infinite loop while processing.                |
 | 510  | Not Extended                    | Further extensions required to fulfill request.                |
 | 511  | Network Authentication Required | Client needs to authenticate to gain network access.           |
+
+
+import and export:
+import and export statements
+require(Before ES6) & import/export(After ES6)::
+import/export (After ES6 / ES Modules)
+import express from "express";
+Introduced in ES6 (ECMAScript 2015).
+
+Supports export and import for modular programming.
+
+Advantages:
+Cleaner syntax
+Works in frontend and backend
+Supports default and named exports
+
+To use import in Node.js:
+Add "type": "module" in package.json
+
+{
+  "type": "module"
+}
+
+ scope instance = require("dependency")
+
+ const express = require("express")
+
+//code 
+import express from "express"
+
+const app = express()
+
+let port = 5011
+
+app.get("/", (req, res) => {
+    res.send("welcome to our link")
+})
+
+app.listen(port, () => {
+    console.log(`server is running on port ${port} !`)
+})
+
+
+MVC (Model-View-Controller) is a software design pattern that separates an application into three interconnected components:
+
+| Component      | Role                                                              |
+| -------------- | ----------------------------------------------------------------- |
+|     Model      | Manages the data and business logic. Interacts with the database. |
+|     View       | The user interface (UI). Displays data from the model.            |
+|     Controller | Handles user input, interacts with model, updates view.           |
+
+Purpose:
+
+Separation of concerns → easier to maintain, test, and scale.
+
+Makes collaboration easier (frontend/back-end can work independently).
