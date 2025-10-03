@@ -1,11 +1,11 @@
 import express from "express"
-import { getHome, getAbout, getContact, postFormData } from "../controller/controller.js"
+import { getTable, getImage, getContact, postForm} from "../controller/controller.js"
 const router = express.Router()
 
-router.get("/", getHome)
-router.get("/about", getAbout)
+router.get("/", getTable)
+router.get("/Image", getImage)
 router.get("/contact", getContact)
 
-router.post("/form-data", postFormData)
+router.post("/form-data", postForm)
 
 export { router }
