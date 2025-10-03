@@ -1,5 +1,25 @@
 <%- include("./partials/header.ejs") %>
-    <h1>this is index.ejs file</h1>
-    <h1>welcome <%= data %></h1>
-    <img src="/media/view.png" alt="">
+    <h1>This is a Table</h1>
+    <h3>This is index.ejs file</h3>
+
+    <form method="POST" action="/form-data">
+        <input name="name" type="text" placeholder="enter name">
+        <input name="phone" type="tel" placeholder="enter phone">
+        <input name="email" type="email" placeholder="enter email">
+        <button style="padding: 5px;background-color: red; color: azure;">Submit</button>
+    </form>
+
+    <table border="1">
+
+    <% for(let i = 0 ; i < data.length; i ++){ %>
+
+        <tr>
+            <td><%= data[i].name %></td>
+            <td><%= data[i].phone %></td>
+            <td><%= data[i].email %></td>
+        </tr>
+    <% } %>
+
+    </table>
+
 <%- include("./partials/footer.ejs") %>
