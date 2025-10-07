@@ -13,9 +13,11 @@ app.use(express.static("public"))
 
 app.use(express.urlencoded({extended: true}))
 
+app.use(express.json())
+
 app.set("view engine", "ejs")
 
-app.use(router)
+app.use("/",router)
 
 app.listen(port, () => {
     console.log(`server is running on port ${port} !`)
