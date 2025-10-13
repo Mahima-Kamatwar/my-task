@@ -109,4 +109,21 @@ const getFilteredData = (req, res) => {
         res.status(500).json({ message: "unable to get filter data", result: null, err })
     }
 }
-export { introToAPI, getAllLanguages, getRandomLanguage, getFilteredData  }
+const NewLanguage = (req, res) => {
+    try {
+
+        let { name, duration, difficulty, scope } = req.body
+
+        if (!name || !duration || !difficulty || !scope) throw ("missing data to create a new language !")
+
+
+        techs.push({ id: techs.length + 1, name, duration, difficulty, scope })
+
+        res.status(202).json({ message: `new language ${name} has been addedd successfully !` })
+
+    } catch (err) {
+        res.status(400).json({ message: "unable to add new language !" })
+    }
+}
+
+export { introToAPI, getAllLanguages, getRandomLanguage, getFilteredData , NewLanguage }
