@@ -1,17 +1,14 @@
 //create
 
 use: use command is used for switching into/creating a new database
-
 use data_name
 
 database
 
 collections
-
 create collecion: db.createCollection("collection_name")
 
 document
-
 db.collection.insertOne({name: "person1", phone: 9766696550, age: 23, address: "nagpur"})
 
 show collections
@@ -639,3 +636,69 @@ db.studentsData.find({
     ]
   }
 ]
+
+//update
+$set : will create a new field
+$unset : will remove field
+
+[1.example]
+db.language.updateMany({}, { $set: { rating: 0 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+[2.example]
+ db.languages.find({scope:{$size:3}}).count()
+52
+
+[3.example]
+ db.languages.find({
+   $expr: { $ne: [ { $size: "$scope" }, 3 ] }
+ }).count()
+
+48
+
+[4.example]
+db.students.updateMany(
+   {},
+   { $unset: { address: "", phone: "" } }
+ )
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+[5.example]
+db.languages.updateMany({
+   scope : {$not: {$size : 3} }
+ },{$unset: {rating : 0}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 48,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+//delete
+
+[1.example]
+db.language.deleteOne({})
+{ acknowledged: true, deletedCount: 0 }
+
+[2.example]
+db.students.drop()
+true
+
+[3.example]
+ db.students.deleteMany({})
+{ acknowledged: true, deletedCount: 2 }
