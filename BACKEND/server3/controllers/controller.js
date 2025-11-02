@@ -18,7 +18,7 @@ const PostRegisterUser = async (req, res) => {
 
         if (userExist) throw ("duplicate phone/email address !")
 
-        // register the user
+        // register user
 
         let newUser = new UserModel({ name, phone, email, address })
 
@@ -32,7 +32,7 @@ const PostRegisterUser = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.status(400).json({ message: "unble to register user !", err })
+        res.status(400).json({ message: "unable to register user !", err })
     }
 }
 
@@ -41,9 +41,8 @@ const getAllUsers = async (req, res) => {
 
         let result = await UserModel.find({})
 
-        // Array, []
 
-        if (result.length == 0) throw ("we dont have results to show !")
+        if (result.length == 0) throw ("we don't have results to show !")
 
         res.status(200).json({ message: "got all user information !", result })
 
