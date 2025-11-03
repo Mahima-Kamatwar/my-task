@@ -1,15 +1,17 @@
 import { userModel } from "../models/UserSchema.js"
 
-let HandleUserRegister = async (req, res) => {
+let UserRegister = async (request, response) => {
     try {
 
-        let { name, phone, email, address, password } = req.body
+        let { name, phone, email, address, password } = request.body
 
-        if (!name || !phone || !email || !address || !password) throw ("invalid/incomplete data !")
+        if (!name || !phone || !email || !address || !password) throw ("invalid data !")
 
-        let userExist = await userModel.findOne({ $or: [{ "email.userEmail": email }, { "phone": phone }] })
+        let userExist = await userModel.findOne(
+            { $or: [{ "email.userEmail": email }, { "phone": phone }] }
+        )
 
-        if (userExist) throw ("duplicate email/phone please try again with different phone/email !")
+        if (userExist) throw ("duplicate email/ phone !")
 
         let emailObject = {
             userEmail: email, verified: false
@@ -21,13 +23,13 @@ let HandleUserRegister = async (req, res) => {
 
         console.log("user registred successfully !")
 
-        res.status(202).json({ message: "user registered successfully !" })
+        response.status(202).json({ message: "user registered successfully !" })
 
     } catch (err) {
-        console.log("unable to register the user : ", err)
-        res.status(400).json({ message: "unble to register user !", err })
+        // console.log("unable to register the user : ", err)
+        response.status(400).json({ message: "unable to register user !", err })
     }
 }
 
-export { HandleUserRegister }
+export { UserRegister }
 

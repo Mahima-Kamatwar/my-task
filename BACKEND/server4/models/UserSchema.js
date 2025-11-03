@@ -34,12 +34,13 @@ let userSchema = mongoose.Schema({
     },
     timeStamp: {
         type: Date,
+        default:Date.now
     }
 })
 
 userSchema.pre("save", async function () {
     this.password = await bcrypt.hash(this.password, 12)
-    this.timeStamp = Date.now()
+    // this.timeStamp = Date.now()
 })
 
 let userModel = new mongoose.model("users", userSchema)

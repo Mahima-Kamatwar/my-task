@@ -1,10 +1,12 @@
 import express from "express"
-import { HandleUserRegister } from "../controllers/controllers.js"
+import { UserRegister } from "../controllers/controllers.js"
 
 const userRouter = express.Router()
 
-userRouter.get("/test", (req, res) => { res.status(200).json({ message: "you reached test route !" }) })
+userRouter.get("/test", (request, response) => { 
+    response.status(200).json({ message: "you reached test route !" }) 
+})
 
-userRouter.post("/user-register", HandleUserRegister)
+userRouter.post("/user-register", UserRegister)
 
 export { userRouter }

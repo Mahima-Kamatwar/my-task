@@ -7,7 +7,7 @@ dotenv.config({ path: "./config.env" })
 
 const app = express()
 
-let port = process.env.PORT || 5012
+let port = process.env.PORT || 5022
 
 app.use(express.json())
 

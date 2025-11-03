@@ -7,7 +7,7 @@ async function conn() {
     try {
 
         await mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
-        console.log("connection with database was successfull !")
+        console.log("connection with database is successfull !")
 
     } catch (err) {
         console.log("unable to connect with the database : ", err)
