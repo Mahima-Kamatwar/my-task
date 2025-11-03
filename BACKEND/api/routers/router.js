@@ -1,5 +1,5 @@
 import express from "express"
-import { introToAPI, getAllLanguages, getRandomLanguage,getFilteredData,NewLanguage } from "../controllers/controller.js"
+import { introToAPI, getAllLanguages, getRandomLanguage, getFilteredData, getLanguageBasedOnId, postNewLanguage } from "../controllers/controller.js"
 
 const router = express.Router()
 
@@ -11,8 +11,11 @@ router.get("/all-languages", getAllLanguages)
 
 router.get("/get-random-language", getRandomLanguage)
 
+
 router.get("/filter", getFilteredData)
 
-router.post('/add/language', NewLanguage)
+router.get('/:id/info', getLanguageBasedOnId)
+
+router.post('/add/language', postNewLanguage)
 
 export { router }

@@ -1,4 +1,5 @@
-import { techs } from "../data/DataSet.js"
+// import { techs } from "../data/DataSet.js"
+import { TechSchema } from "../models/schema.js"
 
 const introToAPI = async (req, res) => {
     res.status(200).json({
@@ -7,19 +8,19 @@ const introToAPI = async (req, res) => {
             {
                 title: "You can get all the languages that are present in our dataset",
                 method: "GET",
-                url: "http://localhost:5011/api/techs/all-languages",
+                url: "http://localhost:5012/api/techs/all-languages",
                 expectedResult: "[objects]/null"
             },
             {
                 title: "You can a random language that is present in our data set",
                 method: "GET",
-                url: "http://localhost:5011/api/techs/get-random-language",
+                url: "http://localhost:5012/api/techs/get-random-language",
                 expectedResult: "[objects]/null"
             },
             {
                 title: "You can filter languages based on Scope, Difficulty, Duration",
                 method: "GET",
-                url: "http://localhost:5011/api/techs?scope=***&difficulty=***&duration=***",
+                url: "http://localhost:5012/api/techs/filter?scope=***&difficulty=***&duration=***",
                 expectedResult: "object/[objects]/null",
                 expectedFilter: [
                     {
@@ -34,31 +35,35 @@ const introToAPI = async (req, res) => {
             {
                 title: "You can search for a language using their ID (id).",
                 method: "GET",
-                url: "http://localhost:5011/api/techs/:id/info",
+                url: "http://localhost:5012/api/techs/:id/info",
                 expectedResult: "object/null"
             },
         ]
     })
 }
 
-const getAllLanguages = (req, res) => {
-    res.status(200).json({ message: `got all ${techs.length} languages for you !`, techs })
+const getAllLanguages = async(req, res) => {
+    try {
+         const techs = await TechModel.find()
+        res.status(200).json({ message: `got all ${techs.length} languages for you !`, techs })
+    } catch (err) {
+        res.status(500).json({ message: "Error fetching languages", error: err })
+    }
 }
 
-const getRandomLanguage = (req, res) => {
+const getRandomLanguage = async(req, res) => {
+    try {
+            const techs = await TechModel.find()
 
-    let randomNuber = Math.floor((Math.random() * 98) + 1)
+        let randomNuber = Math.floor((Math.random() * 98) + 1)
 
-    let randomLanguage = techs.filter((tech, index) => {
-        return index == randomNuber
-    })
+    const randomTech = techs[randomIndex];
+    res.status(200).json({ message: "Random language selected", tech: randomTech });
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching random language", error: err.message });
+  }}
 
-    let [tech] = randomLanguage
-
-    res.status(200).json({ message: "you a random language for you !", tech })
-}
-
-const getFilteredData = (req, res) => {
+const getFilteredData = async(req, res) => {
     try {
 
         let { scope, difficulty, duration } = req.query
@@ -82,48 +87,48 @@ const getFilteredData = (req, res) => {
                 let durationArray = data.duration.split(" ")
                 return Number(durationArray[0]) <= Number(duration.toLowerCase().trim())
             })
-             }
+        }
 
-           
-        // multiple scope
-       if (scope) {
-    filterString += "/scope"
-
-    // Convert comma-separated scopes to array
-    const scopeArray = scope.split(",").map(s => s.toLowerCase().trim());
-    filteredData = filteredData.filter((data) => {
-        // Convert each data.scope item to lowercase for case-insensitive match
-        const dataScopes = data.scope.map(item => item.toLowerCase().trim());
-
-        // Check if every requested scope exists in data.scope
-        return scopeArray.every(reqScope => dataScopes.includes(reqScope));
-    })
-}
-
+        if (scope) {
+            filterString += "/scope"
+            filteredData = filteredData.filter((data) => {
+                return data.scope.some((item) => { return item.toLowerCase() === scope.toLowerCase().trim() })
+            })
+        }
+  filtered = await TechModel.find(filter)
         if (filteredData.length == 0) throw (`unable to filter data based on ${filterString} : ${scope}/${difficulty}/${duration} months`)
 
         res.status(200).json({ message: "we got data you asked for !", filteredBaseOn: filterString, results: filteredData.length, filteredData })
 
     } catch (err) {
         console.log("error while filter : ", err)
-        res.status(500).json({ message: "unable to get filter data", result: null, err })
+        es.status(500).json({ message: "unable to get filter data", result: null, err })
     }
 }
-const NewLanguage = (req, res) => {
+
+const getLanguageBasedOnId =async(req, res) => {
     try {
+    const { id } = req.params;
+    const language = await TechModel.findOne({ id })
 
-        let { name, duration, difficulty, scope } = req.body
+    if (!language)
+      return res.status(404).json({ message: `No language found with id ${id}` })
 
-        if (!name || !duration || !difficulty || !scope) throw ("missing data to create a new language !")
-
-
-        techs.push({ id: techs.length + 1, name, duration, difficulty, scope })
-
-        res.status(202).json({ message: `new language ${name} has been addedd successfully !` })
-
-    } catch (err) {
-        res.status(400).json({ message: "unable to add new language !" })
-    }
+    res.status(200).json({ message: "Language found", language })
+  } catch (err) {
+    res.status(400).json({ message: "Error fetching by ID", error: err.message })
+  }
 }
 
-export { introToAPI, getAllLanguages, getRandomLanguage, getFilteredData , NewLanguage }
+const postNewLanguage =async (req, res) => {
+     try {
+    const { id, name, duration, difficulty, scope } = req.body
+    const newTech = new TechModel({ id, name, duration, difficulty, scope })
+    await newTech.save();
+    res.status(201).json({ message: "Added successfully", data: newTech })
+  } catch (err) {
+    res.status(400).json({ message: "Error adding data", error: err.message })
+  }
+}
+
+export { introToAPI, getAllLanguages, getRandomLanguage, getFilteredData, getLanguageBasedOnId, postNewLanguage }
