@@ -1,4 +1,46 @@
 import { userModel } from "../models/UserSchema.js"
+import nodemailer from "nodemailer"
+
+
+const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.USER_EMAIL,
+        pass: process.env.USER_EMAIL_PASSWORD,
+    },
+});
+
+let genrateOTP = () => {
+    return Math.floor((Math.random() * 9000) + 1000)
+}
+
+let sendEmail = async (email) => {
+    try {
+
+        let otp = genrateOTP()
+
+        let result = await transporter.sendMail({
+            from: process.env.USER_EMAIL,
+            to: email,
+            subject: "test otp email !",
+            html: `
+              <h2><b>your otp is <span style="color:blue;">${otp}</span></b></h1>
+            `
+        })
+        console.log(result)
+
+        console.log("an email has been sent !")
+
+        return result
+
+    } catch (err) {
+        console.log("unable to send email: ", err)
+        throw err
+    }
+}
+
 
 let UserRegister = async (request, response) => {
     try {
@@ -16,6 +58,7 @@ let UserRegister = async (request, response) => {
         let emailObject = {
             userEmail: email, verified: false
         }
+             await sendEmail(email)
 
         let newUser = new userModel({ name, phone, email: emailObject, address, password })
 
@@ -26,7 +69,6 @@ let UserRegister = async (request, response) => {
         response.status(202).json({ message: "user registered successfully !" })
 
     } catch (err) {
-        // console.log("unable to register the user : ", err)
         response.status(400).json({ message: "unable to register user !", err })
     }
 }
