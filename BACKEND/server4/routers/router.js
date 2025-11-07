@@ -1,5 +1,5 @@
 import express from "express"
-import { UserRegister } from "../controllers/controllers.js"
+import { UserRegister, handleEmailOtp } from "../controllers/controllers.js"
 
 const userRouter = express.Router()
 
@@ -8,5 +8,10 @@ userRouter.get("/test", (request, response) => {
 })
 
 userRouter.post("/user-register", UserRegister)
+userRouter.post("/verify-email-otp", handleEmailOtp)
+
+userRouter.post("/reset-password-request", handleEmailOtp)
+
+userRouter.post("/verify-password-reset-otp", handleEmailOtp)
 
 export { userRouter }
