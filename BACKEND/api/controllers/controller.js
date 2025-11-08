@@ -41,86 +41,139 @@ const introToAPI = async (req, res) => {
         ]
     })
 }
+// const getAllLanguages = (req, res) => {
+//     res.status(200).json({ message: `got all ${techs.length} languages for you !`, techs })
+// }
 
 const getAllLanguages = async(req, res) => {
     try {
-         const techs = await TechModel.find()
+         let techs = await TechModel.find()
         res.status(200).json({ message: `got all ${techs.length} languages for you !`, techs })
     } catch (err) {
-        res.status(500).json({ message: "Error fetching languages", error: err })
+        res.status(400).json({ message: "Error fetching languages", error: err })
     }
 }
+// const getRandomLanguage = (req, res) => {
+//     let randomNo = Math.floor((Math.random() * 98) + 1);
 
+//     let randomLang = techs.filter((tech, index) => {
+//         return index === randomNo;
+//     })
+
+//     let [tech] = randomLang;
+
+//     res.status(200).json({ message: "Here is a random language for you", language: tech });
+// }
 const getRandomLanguage = async(req, res) => {
     try {
-            const techs = await TechModel.find()
+            let techs = await TechModel.find()
 
         let randomNuber = Math.floor((Math.random() * 98) + 1)
 
-    const randomTech = techs[randomIndex];
+    let randomTech = techs[randomIndex]
     res.status(200).json({ message: "Random language selected", tech: randomTech });
   } catch (err) {
     res.status(500).json({ message: "Error fetching random language", error: err.message });
   }}
 
-const getFilteredData = async(req, res) => {
-    try {
+// let getFilteredData = async(req, res) => {
+//     try {
 
+//         let { scope, difficulty, duration } = req.query
+
+//         if (!scope && !difficulty && !duration) throw ("invalid filters. please add Scope, Difficulty, Duration as filters")
+
+//         let filteredData = techs
+
+//         let filterString = ''
+
+//         if (difficulty) {
+//             filterString += "/difficulty"
+//             filteredData = filteredData.filter((data) => {
+//                 return data.difficulty.toLowerCase() === difficulty.toLowerCase().trim()
+//             })
+//         }
+
+//         if (duration) {
+//             filterString += "/duration"
+//             filteredData = filteredData.filter((data) => {
+//                 let durationArray = data.duration.split(" ")
+//                 return Number(durationArray[0]) <= Number(duration.toLowerCase().trim())
+//             })
+//         }
+
+//         if (scope) {
+//             filterString += "/scope"
+//             filteredData = filteredData.filter((data) => {
+//                 return data.scope.some((item) => { return item.toLowerCase() === scope.toLowerCase().trim() })
+//             })
+//         }
+//    if (filteredTechs.length === 0) throw (`no data found for the filter applied as ${filterString}: ${scope} ${difficulty} ${duration} months`);
+//         res.status(200).json({ message: "Here are the filtered languages", results: filteredTechs.length, languages: filteredTechs ,});
+//     } catch (err) {
+//         console.log("error while filter : ", err)
+//         res.status(500).json({ message: "unable to get filter data", result: null, err })
+//     }
+
+
+
+let getFilteredData = async (req, res) => {
+    try {
         let { scope, difficulty, duration } = req.query
 
-        if (!scope && !difficulty && !duration) throw ("invalid filters. please add Scope, Difficulty, Duration as filters")
+        if (!scope && !difficulty && !duration)
+            throw ("Please provide at least one filter (scope, difficulty, or duration)")
 
-        let filteredData = techs
+        // Start with an empty filter
+        let filter = {}
 
-        let filterString = ''
+        // Add filters only if provided
+        if (scope) filter.scope = scope.toLowerCase().trim()
+        if (difficulty) filter.difficulty = difficulty.toLowerCase().trim()
+        if (duration) filter.duration = duration.toLowerCase().trim()
 
-        if (difficulty) {
-            filterString += "/difficulty"
-            filteredData = filteredData.filter((data) => {
-                return data.difficulty.toLowerCase() === difficulty.toLowerCase().trim()
-            })
-        }
+        // Get filtered data from MongoDB
+        let filteredData = await TechModel.find(filter)
 
-        if (duration) {
-            filterString += "/duration"
-            filteredData = filteredData.filter((data) => {
-                let durationArray = data.duration.split(" ")
-                return Number(durationArray[0]) <= Number(duration.toLowerCase().trim())
-            })
-        }
+        if (filteredData.length === 0)
+            throw ("No data found for given filters!")
 
-        if (scope) {
-            filterString += "/scope"
-            filteredData = filteredData.filter((data) => {
-                return data.scope.some((item) => { return item.toLowerCase() === scope.toLowerCase().trim() })
-            })
-        }
-  filtered = await TechModel.find(filter)
-        if (filteredData.length == 0) throw (`unable to filter data based on ${filterString} : ${scope}/${difficulty}/${duration} months`)
-
-        res.status(200).json({ message: "we got data you asked for !", filteredBaseOn: filterString, results: filteredData.length, filteredData })
+        res.status(200).json({
+            message: "Filtered data fetched successfully!",
+            results: filteredData.length,
+            filteredData
+        });
 
     } catch (err) {
-        console.log("error while filter : ", err)
-        es.status(500).json({ message: "unable to get filter data", result: null, err })
+        console.log("Error in getFilteredData:", err);
+        res.status(400).json({ message: "Unable to filter data", error: err.toString() });
+    }
+};
+
+ const getLanguageBasedOnId = async(req,res) => {
+    
+      try {
+        let { id } = req.params
+        if (!id) throw ("Invalid ID!")
+        let IdBasedResult = await TechModel.findOne({
+            id: id
+        })
+
+        if (!IdBasedResult) {
+            res.status(200).json({ message: "Couldn't find the language based on the given id! Please provide valid id!" })
+        }
+
+        res.status(200).json({
+            message: `Got your language of ${id} id`, IdBasedResult
+        })
+    } catch (error) {
+        res.status(400).json({
+            message: "Unable to get your language", error
+        })
+        console.log(error)
     }
 }
-
-const getLanguageBasedOnId =async(req, res) => {
-    try {
-    const { id } = req.params;
-    const language = await TechModel.findOne({ id })
-
-    if (!language)
-      return res.status(404).json({ message: `No language found with id ${id}` })
-
-    res.status(200).json({ message: "Language found", language })
-  } catch (err) {
-    res.status(400).json({ message: "Error fetching by ID", error: err.message })
-  }
-}
-
-const postNewLanguage =async (req, res) => {
+let postNewLanguage =async (req, res) => {
      try {
     const { id, name, duration, difficulty, scope } = req.body
     const newTech = new TechModel({ id, name, duration, difficulty, scope })
