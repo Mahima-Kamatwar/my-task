@@ -4,6 +4,10 @@ import Comp1 from "./components/comp1"
 const App = () => {
   const [toShow, setToShow] = useState(false)
 
+//  toShow → stores true/false
+// Initially it is false
+// setToShow → a function used to change the value
+
   const [profile, setProfile] = useState({
     name: "mahima kamatwar",
     contact: "9022836145",
@@ -20,16 +24,16 @@ const App = () => {
       <Comp1 />
 
       {/* Toggle message */}
-      {toShow && (
+      {toShow ? 
         <h1 className="bg-red-500 text-black px-5 py-3 inline absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold">
-          hiii
-        </h1>
-      )}
+          hello!
+        </h1>:null
+      }
 
       {/* Profile Table */}
-      {profile.name ? (
+      {profile.name ? 
         <div>
-          <table className="table border-2">
+          <table className="table border-2 border-collapse">
             <thead>
               <tr>
                 <th>Name</th>
@@ -47,10 +51,9 @@ const App = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-      ) : (
+        </div>: 
         <h1>empty profile !</h1>
-      )}
+      }
 
       <button
         onClick={handleClick}
