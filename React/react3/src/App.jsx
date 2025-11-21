@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import Comp1 from "./components/comp1"
+import Comp1 from "./components/Comp1"
+import Comp2 from "./components/Comp2"
 
 const App = () => {
   const [toShow, setToShow] = useState(false)
@@ -21,17 +22,18 @@ const App = () => {
 
   return (
     <div className="p-5 m-5">
-      <Comp1 />
+    <Comp2/>
+      {/* <Comp1 /> */}
 
       {/* Toggle message */}
-      {toShow ? 
+      {/* {toShow ? 
         <h1 className="bg-red-500 text-black px-5 py-3 inline absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold">
           hello!
         </h1>:null
-      }
+      } */}
 
       {/* Profile Table */}
-      {profile.name ? 
+        {/* {profile.name ? 
         <div>
           <table className="table border-2 border-collapse">
             <thead>
@@ -60,9 +62,9 @@ const App = () => {
         className="bg-blue-500 px-3 py-2 mt-5 font-bold text-white"
       >
         Toggle
-      </button>
+      </button> */}
     </div>
   )
 }
-
 export default App
+
