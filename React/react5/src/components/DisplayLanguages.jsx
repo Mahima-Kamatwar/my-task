@@ -17,6 +17,7 @@ const DisplayLanguages = (props) => {
                                 <li className='bg-gradient-to-br from-blue-100 to-blue-300 text-blue-800 px-4 py-2 rounded-xl text-center font-semibold'>
                                     Duration: {item.duration}
                                 </li>
+                                {/* talwind bg-gradient property */}
                                 {/* Top Right → Bottom Left ->bl */}
                                 {/* Top Left -> Bottom Right ->br */}
                                 <span className='font-bold'>Used For :</span>
