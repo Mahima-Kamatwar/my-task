@@ -101,4 +101,3 @@ const techs = [
     { id: 100, name: "LangChain", duration: "2 months", difficulty: "Medium", scope: ["AI", "LLM Apps", "Chatbots"] }
 ];
 
-export { techs }
