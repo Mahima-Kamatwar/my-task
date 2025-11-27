@@ -59,7 +59,7 @@ const handleResetClick = () => {
                 <div className='flex flex-col gap-4'>
                     <input onChange={handleChange} name='name' value={languageForm.name} className='p-2 focus:ring-2 ring-blue-600 outline-none rounded transition-all' type="text" placeholder='Name/Title' />
                     <div className='flex items-center gap-3'>
-                        <label htmlFor="">Please Select Difficulty Level : </label>
+                        <label htmlFor="">Select Difficulty Level : </label>
                         <select onChange={handleChange} name="difficulty" value={languageForm.difficulty} className='grow p-2 focus:ring-2 ring-blue-600 outline-none rounded transition-all bg-white'>
                             <option value="Easy">Easy</option>
                             <option value="Medium">Medium</option>
@@ -68,7 +68,7 @@ const handleResetClick = () => {
                     </div>
                     <input onChange={handleChange} name='scope' value={languageForm.scope} className='p-2 focus:ring-2 ring-blue-600 outline-none rounded transition-all' type="text" placeholder='Enter Scope/s seperate by , eg: mobile, web, desktop' />
                     <div className='flex gap-3 items-center'>
-                        <label htmlFor="">Please Select Months(1 to 12) : </label>
+                        <label htmlFor="">Select Months (1 to 12) : </label>
                         <input onChange={handleChange} name='duration' className='grow' type="range" max={12} step={1} value={languageForm.duration} />
                     </div>
                 </div>
