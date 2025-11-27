@@ -1,0 +1,25 @@
+
+*{
+    background-color: rgb(179, 174, 181);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#comp1{
+    margin: 100px auto;
+    height: 200px;
+    width: 400px;
+    background-color: rgb(128, 193, 145);
+    position: relative;
+    >div{
+        height: 50%;
+        width: 50%;
+        background-color: burlywood;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-50%) ;
+        >h2{
+            color: rgb(47, 17, 81);
+        }
+    }
+}
+

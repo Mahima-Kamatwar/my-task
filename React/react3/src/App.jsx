@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Comp1 from "./components/Comp1"
 import Comp2 from "./components/Comp2"
+import "./Stylesheet/index.scss"
 
 const App = () => {
   const [toShow, setToShow] = useState(false)
