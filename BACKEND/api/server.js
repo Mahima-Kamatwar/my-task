@@ -12,6 +12,14 @@ let port = process.env.PORT
 
 app.use(express.static("public"))
 
+ let CORSOPTION ={
+  origin:"*",methods:"*"
+ }
+  
+ app.use(cors(CORSOPTION))
+
+
+
 app.use(express.urlencoded({ extended: true }))
 
 app.use(express.json())

@@ -15,12 +15,9 @@ const DisplayLanguage = () => {
                 url: "http://localhost:5012/api/techs/all-languages"
             })
 
-            console.log(result)
+            // console.log(result)
 
             if (result.status != 200) throw ("failed to get data")
-
-           
-
             setTechs(result.data.techs)
 
         } catch (err) {
@@ -28,15 +25,15 @@ const DisplayLanguage = () => {
         }
     }
 
-    useEffect(() => {
-        fetchData()
-    }, [])
+    // useEffect(() => {
+    //     fetchData()
+    // }, [])
     const displayTech = (tech, index) => {
         return (
             <div key={tech.id} className='tech p-2 border shadow min-w-[300px] h-[300px] rounded'>
                 <ul className='flex flex-col gap-3'>
                     <li className='text-2xl font-bold'>{tech.name}</li>
-                    <li className='bg-orange-200 p-2 rounded'>{tech.difficulty}</li>
+                    <li className='bg-purple-200 p-2 rounded'>{tech.difficulty}</li>
                     <li className='bg-green-200 p-2 rounded'>{tech.duration}</li>
                     <span className='font-bold'>Used For :</span>
                     <li>

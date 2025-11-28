@@ -1,5 +1,5 @@
 // import { techs } from "../data/DataSet.js"
-import { TechSchema } from "../models/schema.js"
+import { TechModel} from "../models/schema.js"
 
 const introToAPI = async (req, res) => {
     res.status(200).json({

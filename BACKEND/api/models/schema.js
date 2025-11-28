@@ -25,4 +25,4 @@ const TechSchema = new mongoose.Schema({
 })
 
 let TechModel = mongoose.model("Tech", TechSchema)
-export { TechSchema }
+export { TechModel }
