@@ -20,7 +20,7 @@ const Comp1 = () => {
             <h2>{data1}</h2>
             <button onClick={() => { increase() }}>increase</button>
 
-            <Link to="/other">Go to /other</Link>
+            <Link to="/other">Go to other</Link>
 
         </div>
     )
