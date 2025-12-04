@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useData } from '../contexts/DataContext'
+import { Link } from 'react-router-dom'
 
 const Comp1 = () => {
 
@@ -7,12 +8,20 @@ const Comp1 = () => {
 
     let [data1, setData1] = useState(data)
 
+    useEffect(() => {
+        setData1(prev => {
+            return data1 + 2000
+        })
+    }, [data])
+
     return (
         <div>
             <h1> Component 1</h1>
             <h2>{data1}</h2>
-            <button onClick={() => { increase() }}>
-                increase</button>
+            <button onClick={() => { increase() }}>increase</button>
+
+            <Link to="/other">Go to /other</Link>
+
         </div>
     )
 }
